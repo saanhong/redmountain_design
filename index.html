@@ -59,6 +59,10 @@
       gap: 0.5rem;
     }
 
+    .link-item:hover {
+      color: #981d20;
+    }
+
     .link-item img {
       width: 20px;
       height: 20px;
@@ -67,31 +71,24 @@
 
     .link-text-wrapper {
       position: relative;
+      width: 240px; /* 너비 고정 */
       height: 1.5em;
       overflow: hidden;
     }
 
-    .link-text {
-      display: block;
+    .link-text-inner {
+      display: flex;
+      width: calc(240px * 2); /* 두 텍스트 너비 합 */
       transition: transform 0.4s ease;
     }
 
-    .link-text.secondary {
-      position: absolute;
-      top: 100%;
-      left: 0;
+    .link-text {
+      width: 240px;
+      white-space: nowrap;
     }
 
-    .link-item:hover .link-text.primary {
-      transform: translateY(-100%);
-    }
-
-    .link-item:hover .link-text.secondary {
-      transform: translateY(-100%);
-    }
-
-    .link-item:hover {
-      color: #981d20;
+    .link-item:hover .link-text-inner {
+      transform: translateX(-240px);
     }
 
     /* 모바일 대응 */
@@ -114,7 +111,16 @@
       }
 
       .link-text-wrapper {
-        font-size: 1rem;
+        width: 180px;
+      }
+
+      .link-text,
+      .link-text-inner {
+        width: 180px;
+      }
+
+      .link-item:hover .link-text-inner {
+        transform: translateX(-180px);
       }
     }
   </style>
@@ -130,22 +136,28 @@
       <a href="https://blog.naver.com/redmountain_design" target="_blank" class="link-item">
         <img src="blog-icon.svg" alt="블로그 아이콘">
         <span class="link-text-wrapper">
-          <span class="link-text primary">작업물 블로그</span>
-          <span class="link-text secondary">작업물 블로그 방문하기</span>
+          <span class="link-text-inner">
+            <span class="link-text">작업물 블로그</span>
+            <span class="link-text">작업물 블로그 방문하기</span>
+          </span>
         </span>
       </a>
       <a href="https://www.instagram.com/redmountain.design/" target="_blank" class="link-item">
         <img src="instagram-icon.svg" alt="인스타그램 아이콘">
         <span class="link-text-wrapper">
-          <span class="link-text primary">적산 인스타그램</span>
-          <span class="link-text secondary">적산 인스타그램 문의하기</span>
+          <span class="link-text-inner">
+            <span class="link-text">적산 인스타그램</span>
+            <span class="link-text">적산 인스타그램 문의하기</span>
+          </span>
         </span>
       </a>
       <a href="mailto:redmountain_design@naver.com" class="link-item">
         <img src="mail-icon.svg" alt="메일 아이콘">
         <span class="link-text-wrapper">
-          <span class="link-text primary">작업 문의</span>
-          <span class="link-text secondary">적산에게 작업 문의하기</span>
+          <span class="link-text-inner">
+            <span class="link-text">작업 문의</span>
+            <span class="link-text">적산에게 작업 문의하기</span>
+          </span>
         </span>
       </a>
     </div>
