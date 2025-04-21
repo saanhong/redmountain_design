@@ -6,11 +6,10 @@
   <title>디자인하우스 적산</title>
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- ✅ 스포카 한 산스 웹폰트 -->
+  <!-- ✅ Spoqa Han Sans 웹폰트 -->
   <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css">
 
   <style>
-    /* 기본 설정 */
     body {
       margin: 0;
       background-color: #191818;
@@ -32,10 +31,11 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      align-items: baseline;
+    }
+
+    .title-combined {
+      white-space: nowrap;
+      display: inline-block;
     }
 
     .title-thin {
@@ -90,9 +90,7 @@
       }
 
       h1 {
-        font-size: 2.2rem;
-        flex-direction: column;
-        line-height: 1.4;
+        font-size: 1.8rem;
       }
 
       p {
@@ -114,8 +112,9 @@
 <body>
   <div class="container">
     <h1>
-      <span class="title-thin">디자인하우스</span>
-      <span class="title-bold">적산</span>
+      <span class="title-combined">
+        <span class="title-thin">디자인하우스 </span><span class="title-bold">적산</span>
+      </span>
     </h1>
     <p>
       정적인 시간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 디자인합니다.<br>
