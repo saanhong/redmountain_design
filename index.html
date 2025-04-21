@@ -2,13 +2,15 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>디자인하우스 적산</title>
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- ✅ 스포카 한 산스 웹폰트 불러오기 -->
+  <!-- ✅ 스포카 한 산스 웹폰트 -->
   <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css">
 
   <style>
+    /* 기본 설정 */
     body {
       margin: 0;
       background-color: #191818;
@@ -64,6 +66,7 @@
       align-items: center;
       gap: 0.6rem;
       font-weight: 400;
+      font-size: 1rem;
       color: #dcdcdc;
       text-decoration: none;
       transition: color 0.3s ease;
@@ -80,22 +83,30 @@
       display: block;
     }
 
+    /* ✅ 모바일 대응 */
     @media (max-width: 600px) {
       .container {
-        padding: 0 4vw;
+        padding: 0 7vw;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        flex-direction: column;
+        line-height: 1.4;
       }
 
       p {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .link-item {
+        font-size: 1.05rem;
       }
 
       .link-item img {
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
       }
     }
   </style>
