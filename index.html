@@ -23,7 +23,7 @@
       justify-content: center;
       align-items: flex-start;
       height: 100vh;
-      padding: 0 10vw;
+      padding: 0 5vw;
       text-align: left;
       box-sizing: border-box;
     }
@@ -57,6 +57,29 @@
     .links img {
       width: 20px;
       height: 20px;
+    }
+   /* ✅ 모바일 대응 */
+    @media (max-width: 600px) {
+      body {
+        padding: 0 4vw;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .links a {
+        font-size: 1rem;
+      }
+
+      .links img {
+        width: 18px;
+        height: 18px;
+      }
     }
   </style>
 </head>
