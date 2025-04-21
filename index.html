@@ -5,20 +5,15 @@
   <title>디자인하우스 적산</title>
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- ✅ 프리젠테이션 9Black 웹폰트 @font-face -->
-  <style>
-    @font-face {
-      font-family: 'Freesentation-9Black';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
-      font-weight: 900;
-      font-style: normal;
-    }
+  <!-- ✅ 갈무리체 시리즈 불러오기 -->
+  <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css">
 
+  <style>
     body {
       margin: 0;
       background-color: #191818;
       color: #dcdcdc;
-      font-family: 'Freesentation-9Black', sans-serif;
+      font-family: 'Galmuri9', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -26,7 +21,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 960px;
       width: 100%;
       padding: 0 5vw;
       box-sizing: border-box;
@@ -35,9 +30,24 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .title-light {
+      font-family: 'Galmuri11', sans-serif;
+      color: #dcdcdc;
+    }
+
+    .title-bold {
+      font-family: 'Galmuri7', sans-serif;
+      color: #981d20;
     }
 
     p {
+      font-family: 'Galmuri9', sans-serif;
       font-size: 1.2rem;
       margin-bottom: 2rem;
       line-height: 1.6;
@@ -53,8 +63,10 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
+      font-family: 'Galmuri9', sans-serif;
       color: #dcdcdc;
       text-decoration: none;
+      font-weight: normal;
       transition: color 0.3s ease;
     }
 
@@ -91,7 +103,10 @@
 </head>
 <body>
   <div class="container">
-    <h1>디자인하우스 적산</h1>
+    <h1>
+      <span class="title-light">디자인하우스</span>
+      <span class="title-bold">적산</span>
+    </h1>
     <p>
       정적인 시간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 디자인합니다.<br>
       종이, 나무, 메탈, 가죽, 아크릴 등 다양한 소재를 뒤섞어 아이덴티티, 간판, 구조물을 설계합니다.
