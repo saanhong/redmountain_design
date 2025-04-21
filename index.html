@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>디자인하우스 적산</title>
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- ✅ KoPub Dotum CDN -->
-  <link href="https://cdn.jsdelivr.net/gh/webfontworld/kopus@1.0/kopubdotum.min.css" rel="stylesheet">
-
+  <!-- ✅ 프리젠테이션 9Black 웹폰트 @font-face -->
   <style>
+    @font-face {
+      font-family: 'Freesentation-9Black';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+    }
+
     body {
       margin: 0;
       background-color: #191818;
       color: #dcdcdc;
-      font-family: 'KoPub Dotum', sans-serif;
+      font-family: 'Freesentation-9Black', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -22,7 +26,7 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 960px;
       width: 100%;
       padding: 0 5vw;
       box-sizing: border-box;
@@ -31,16 +35,6 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-    }
-
-    .kopub-light {
-      font-weight: 300;
-      color: #dcdcdc;
-    }
-
-    .kopub-bold {
-      font-weight: 700;
-      color: #981d20;
     }
 
     p {
@@ -97,12 +91,10 @@
 </head>
 <body>
   <div class="container">
-    <h1>
-      <span class="kopub-light">디자인하우스 </span><span class="kopub-bold">적산</span>
-    </h1>
+    <h1>디자인하우스 적산</h1>
     <p>
-      정적인 시간과 만져지는 것의 힘을 믿습니다.<br>
-      종이, 나무, 메탈, 가죽, 아크릴 등 다양한 소재를 뒤섞어 아이덴티티, 간판, 구조물을 인간공학 엔지니어가 설계합니다.
+      정적인 시간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 디자인합니다.<br>
+      종이, 나무, 메탈, 가죽, 아크릴 등 다양한 소재를 뒤섞어 아이덴티티, 간판, 구조물을 설계합니다.
     </p>
     <div class="links">
       <a href="https://blog.naver.com/redmountain_design" target="_blank" class="link-item">
