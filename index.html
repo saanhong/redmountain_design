@@ -26,7 +26,7 @@
     }
 
     .container {
-      max-width: 960px;       /* ✅ 폭을 넓힘 */
+      max-width: 960px;
       width: 100%;
       padding: 0 5vw;
       box-sizing: border-box;
@@ -49,26 +49,43 @@
       gap: 1rem;
     }
 
-    .links a {
-      color: #dcdcdc;
-      text-decoration: none;
-      font-size: 1.1rem;
+    .link-item {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      color: #dcdcdc;
+      text-decoration: none;
+      overflow: hidden;
+      width: fit-content;
       transition: color 0.3s ease;
     }
 
-    .links a:hover {
+    .link-item:hover {
       color: #981d20;
     }
 
-    .links img {
+    .link-item img {
       width: 20px;
       height: 20px;
+      flex-shrink: 0;
     }
 
-    /* ✅ 모바일 대응 */
+    .link-text {
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: max-width 0.4s ease, opacity 0.4s ease, margin-left 0.4s ease;
+      margin-left: 0;
+      display: inline-block;
+    }
+
+    .link-item:hover .link-text {
+      max-width: 200px;
+      opacity: 1;
+      margin-left: 0.5rem;
+    }
+
+    /* 모바일 대응 */
     @media (max-width: 600px) {
       .container {
         padding: 0 4vw;
@@ -82,13 +99,13 @@
         font-size: 1rem;
       }
 
-      .links a {
-        font-size: 1rem;
-      }
-
-      .links img {
+      .link-item img {
         width: 18px;
         height: 18px;
+      }
+
+      .link-text {
+        font-size: 1rem;
       }
     }
   </style>
@@ -96,20 +113,24 @@
 <body>
   <div class="container">
     <h1>디자인하우스 적산</h1>
-    <p>정적인 시간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 디자인합니다.<br>
+    <p>
+      정적인 시공간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 디자인합니다.<br>
       종이, 나무, 메탈, 가죽, 아크릴 등 다양한 소재를 뒤섞어 아이덴티티, 간판, 구조물을 설계합니다.
     </p>
     <div class="links">
-    <a href="https://blog.naver.com/redmountain_design" target="_blank">
-      <img src="blog-icon.svg" alt="블로그 아이콘"> 작업물 블로그
-    </a>
-    <a href="https://www.instagram.com/redmountain.design/" target="_blank">
-      <img src="instagram-icon.svg" alt="인스타그램 아이콘"> 적산 인스타그램
-    </a>
-    <a href="mailto:redmountain_design@naver.com">
-    <img src="mail-icon.svg" alt="메일 아이콘"> 작업 문의
-    </a>
-  </div>
+      <a href="https://blog.naver.com/redmountain_design" target="_blank" class="link-item">
+        <img src="blog-icon.svg" alt="블로그 아이콘">
+        <span class="link-text">작업물 블로그</span>
+      </a>
+      <a href="https://www.instagram.com/redmountain.design/" target="_blank" class="link-item">
+        <img src="instagram-icon.svg" alt="인스타그램 아이콘">
+        <span class="link-text">적산 인스타그램</span>
+      </a>
+      <a href="mailto:redmountain_design@naver.com" class="link-item">
+        <img src="mail-icon.svg" alt="메일 아이콘">
+        <span class="link-text">작업 문의</span>
+      </a>
+    </div>
   </div>
 </body>
 </html>
