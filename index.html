@@ -6,7 +6,7 @@
   <title>디자인하우스 적산</title>
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- ✅ Spoqa Han Sans 웹폰트 -->
+  <!-- Spoqa Han Sans 웹폰트 -->
   <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css">
 
   <style>
@@ -50,7 +50,7 @@
 
     p {
       font-weight: 400;
-      font-size: 1.2rem;
+      font-size: 1rem; /* ✅ 이전 1.2rem → 작게 변경 */
       margin-bottom: 2rem;
       line-height: 1.6;
     }
@@ -66,7 +66,7 @@
       align-items: center;
       gap: 0.6rem;
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 1.2rem; /* ✅ 이전 1rem → 키움 */
       color: #dcdcdc;
       text-decoration: none;
       transition: color 0.3s ease;
@@ -83,23 +83,22 @@
       display: block;
     }
 
-    /* ✅ 모바일 대응 */
     @media (max-width: 600px) {
       .container {
         padding: 0 7vw;
       }
 
       h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: 0.95rem; /* ✅ 함께 줄임 */
         line-height: 1.7;
       }
 
       .link-item {
-        font-size: 1.05rem;
+        font-size: 1.1rem; /* ✅ 함께 키움 */
       }
 
       .link-item img {
