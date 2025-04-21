@@ -5,13 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>디자인하우스 적산</title>
-  <link href="https://cdn.jsdelivr.net/gh/webfontworld/kopus@1.0/kopubdotum.min.css" rel="stylesheet">
-  <style>
-    @font-face {
-      font-weight: normal;
-      font-style: normal;
-    }
 
+  <!-- ✅ KoPub Dotum CDN -->
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/kopus@1.0/kopubdotum.min.css" rel="stylesheet">
+
+  <style>
     body {
       margin: 0;
       background-color: #191818;
@@ -33,6 +31,16 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+    }
+
+    .kopub-light {
+      font-weight: 300;
+      color: #dcdcdc;
+    }
+
+    .kopub-bold {
+      font-weight: 700;
+      color: #981d20;
     }
 
     p {
@@ -67,7 +75,6 @@
       display: block;
     }
 
-    /* 모바일 대응 */
     @media (max-width: 600px) {
       .container {
         padding: 0 4vw;
@@ -90,10 +97,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>디자인하우스 적산</h1>
+    <h1>
+      <span class="kopub-light">디자인하우스 </span><span class="kopub-bold">적산</span>
+    </h1>
     <p>
-      정적인 시간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 디자인합니다.<br>
-      종이, 나무, 메탈, 가죽, 아크릴 등 다양한 소재를 뒤섞어 아이덴티티, 간판, 구조물을 설계합니다.
+      정적인 시간과 만져지는 것의 힘을 믿습니다.<br>
+      종이, 나무, 메탈, 가죽, 아크릴 등 다양한 소재를 뒤섞어 아이덴티티, 간판, 구조물을 인간공학 엔지니어가 설계합니다.
     </p>
     <div class="links">
       <a href="https://blog.naver.com/redmountain_design" target="_blank" class="link-item">
