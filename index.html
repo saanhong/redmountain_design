@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디자인하우스 적산</title>
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/kopus@1.0/kopubdotum.min.css" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'KoPub Dotum';
+      src: url('https://cdn.jsdelivr.net/gh/webfontworld/kopus/KoPubDotumMedium.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      background-color: #191818;
+      color: #dcdcdc;
+      font-family: 'KoPub Dotum', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      padding: 0 10vw;
+      text-align: left;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .links a {
+      color: #dcdcdc;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    .links a:hover {
+      color: #981d20;
+    }
+    .links img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>디자인하우스 적산</h1>
+  <p>정적인 시간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 디자인합니다.<br>
+    종이, 나무, 메탈, 가죽, 아크릴 등 다양한 소재를 뒤섞어 아이덴티티, 간판, 구조물을 설계합니다.
+  </p>
+  <div class="links">
+    <a href="https://blog.naver.com/redmountain_design" target="_blank">
+      <img src="blog-icon.png" alt="블로그 아이콘"> 블로그
+    </a>
+    <a href="https://www.instagram.com/redmountain.design/" target="_blank">
+      <img src="instagram-icon.png" alt="인스타그램 아이콘"> 인스타그램
+    </a>
+    <a href="mailto:redmountain_design@naver.com">
+      <img src="mail-icon.png" alt="메일 아이콘"> 문의
+    </a>
+  </div>
+</body>
+</html>
