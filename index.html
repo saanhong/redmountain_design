@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>디자인하우스 적산</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <!-- Open Graph 메타태그 -->
+
   <meta property="og:title" content="디자인하우스 적산" />
   <meta property="og:description" content="정적인 시공간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 설계합니다." />
   <meta property="og:image" content="https://redmountain.kr/og-thumbnail.jpg" />
   <meta property="og:url" content="https://redmountain.kr" />
   <meta property="og:type" content="website" />
 
-  <!-- 학교안심 바른돋움체 웹폰트 -->
+
   <style>
     @font-face {
       font-family: 'HakgyoansimBareondotumB';
@@ -44,13 +44,12 @@
       padding: 0 5vw;
       box-sizing: border-box;
     }
-    
-    /* 로고와 제목이 같은 위치에서 시작하도록 컨테이너 내부 요소들에 패딩 제거 */
+  
     .container > * {
       padding-left: 0;
     }
 
-    /* 로고 스타일 */
+
     .logo-container {
       text-align: left;
       margin-bottom: 2rem;
@@ -77,7 +76,7 @@
     }
 
     .logo {
-      /* 이미지 원본 크기와 비율 유지 */
+
       width: auto;
       height: auto;
       max-width: 25%;
@@ -178,7 +177,7 @@
 </head>
 <body>
   <div class="container">
-    <!-- 로고 버튼 추가 -->
+
     <div class="logo-container">
       <button onclick="refreshPage()" class="logo-button" aria-label="새로고침">
         <img src="logo.svg" alt="디자인하우스 적산 로고" class="logo">
@@ -213,27 +212,27 @@
       </a>
     </div>
 
-    <!-- ✅ 복사 완료 안내 문구 -->
+
     <div id="copy-alert">
       디자인하우스 적산의 이메일 주소가 복사되었습니다.
     </div>
   </div>
 
-  <!-- 자바스크립트 -->
+
   <script>
-    // 페이지 새로고침 함수
+
     function refreshPage() {
       window.location.reload();
     }
 
-    // 이메일 복사 기능 스크립트
+
     function copyEmail() {
       const email = 'redmountain_design@naver.com';
       navigator.clipboard.writeText(email).then(function() {
         document.getElementById('copy-alert').style.display = 'block';
         setTimeout(() => {
           document.getElementById('copy-alert').style.display = 'none';
-        }, 3000); // 3초 후 사라짐
+        }, 3000); 
       }, function(err) {
         alert('복사에 실패했습니다. 직접 입력해주세요.');
       });
