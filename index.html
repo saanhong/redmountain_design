@@ -45,6 +45,35 @@
       box-sizing: border-box;
     }
 
+    /* 로고 스타일 */
+    .logo-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-button {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-button:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-button:focus {
+      outline: none;
+    }
+
+    .logo {
+      /* 이미지 원본 크기와 비율 유지 */
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 2.5rem;
@@ -140,6 +169,13 @@
 </head>
 <body>
   <div class="container">
+    <!-- 로고 버튼 추가 -->
+    <div class="logo-container">
+      <button onclick="refreshPage()" class="logo-button" aria-label="새로고침">
+        <img src="https://cdn.jsdelivr.net/gh/saanhong/redmountain_design@main/logo.svg" alt="디자인하우스 적산 로고" class="logo">
+      </button>
+    </div>
+    
     <h1>
       <span class="title-combined">
         <span class="title-thin">디자인하우스 </span><span class="title-bold">적산</span>
@@ -174,8 +210,14 @@
     </div>
   </div>
 
-  <!-- ✅ 이메일 복사 기능 스크립트 -->
+  <!-- 자바스크립트 -->
   <script>
+    // 페이지 새로고침 함수
+    function refreshPage() {
+      window.location.reload();
+    }
+
+    // 이메일 복사 기능 스크립트
     function copyEmail() {
       const email = 'redmountain_design@naver.com';
       navigator.clipboard.writeText(email).then(function() {
