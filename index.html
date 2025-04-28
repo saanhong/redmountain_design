@@ -44,19 +44,28 @@
       padding: 0 5vw;
       box-sizing: border-box;
     }
+    
+    /* 로고와 제목이 같은 위치에서 시작하도록 컨테이너 내부 요소들에 패딩 제거 */
+    .container > * {
+      padding-left: 0;
+    }
 
     /* 로고 스타일 */
     .logo-container {
       text-align: left;
       margin-bottom: 2rem;
+      padding-left: 0;
     }
 
     .logo-button {
       background: none;
       border: none;
       padding: 0;
+      margin: 0;
       cursor: pointer;
       transition: transform 0.3s ease;
+      display: flex;
+      justify-content: flex-start;
     }
 
     .logo-button:hover {
@@ -71,7 +80,7 @@
       /* 이미지 원본 크기와 비율 유지 */
       width: auto;
       height: auto;
-      max-width: 30%;
+      max-width: 25%;
     }
 
     h1 {
@@ -172,7 +181,7 @@
     <!-- 로고 버튼 추가 -->
     <div class="logo-container">
       <button onclick="refreshPage()" class="logo-button" aria-label="새로고침">
-        <img src="https://cdn.jsdelivr.net/gh/saanhong/redmountain_design@main/logo.svg" alt="디자인하우스 적산 로고" class="logo">
+        <img src="logo.svg" alt="디자인하우스 적산 로고" class="logo">
       </button>
     </div>
     
