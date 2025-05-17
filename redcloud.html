@@ -128,7 +128,7 @@
       margin-bottom: 2.5rem;
     }
 
-    .toggles {
+      .toggles {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -141,8 +141,10 @@
       padding: 0.5rem 1rem;
       border: 1px solid #509140;
       border-radius: 0px;
+      background-color: transparent;
+      color: #509140;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, color 0.3s;
     }
 
     .toggle-button:hover {
@@ -153,9 +155,10 @@
     .content-box {
       display: none;
       padding: 1.5rem;
-      background-color: #ffffff;
+      background-color: transparent;
+      border: 1px solid #509140;
       border-radius: 1px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      box-shadow: none;
       margin-top: 1rem;
     }
 
