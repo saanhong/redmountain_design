@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>적운 콜렉티브 | redcloud collective</title>
 
-  <!-- ✅ 페이지 파비콘 설정 -->
   <link rel="icon" type="image/png" href="cloud.png">
 
-  <!-- ✅ 스타일 -->
   <style>
     @font-face {
       font-family: 'HakgyoansimBareondotumB';
@@ -46,7 +44,7 @@
     }
 
     .logo {
-      max-width: 180px;
+      max-width: 220px;
       height: auto;
       margin-bottom: 0.5rem;
       display: block;
@@ -76,14 +74,13 @@
       text-decoration: none;
     }
 
-    /* ✅ 돌아가기 링크 스타일 */
     .back-link {
       margin-top: 4rem;
       display: inline-flex;
       align-items: center;
       font-size: 1rem;
       text-decoration: none;
-      gap: 0.2rem; /* ✅ 텍스트 간격 좁힘 */
+      gap: 0.2rem;
       border: none;
     }
 
@@ -97,7 +94,8 @@
       display: inline-block;
       vertical-align: middle;
       margin-right: 4px;
-      transform: translateY(-1px);
+      transform: translateY(-3px);
+      object-fit: contain;
     }
 
     .back-thin {
@@ -108,12 +106,62 @@
     .back-bold {
       font-family: 'HakgyoansimBareondotumB', sans-serif;
       color: #981d20;
-      margin-left: 1px; /* ✅ 아주 좁게 간격 조정 */
+      margin-left: 1px;
     }
 
     .back-link:hover .back-thin,
     .back-link:hover .back-bold {
       color: #981d20;
+    }
+
+    .statement-title {
+      font-family: 'Times New Roman', serif;
+      font-size: 1.2rem;
+      font-style: regular;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .statement-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .toggles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-button {
+      font-family: 'HakgyoansimBareondotumB', sans-serif;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #ffffff;
+      border: 1px solid #509140;
+      border-radius: 0px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-button:hover {
+      background-color: #509140;
+      color: #fff;
+    }
+
+    .content-box {
+      display: none;
+      padding: 1.5rem;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+
+    .content-box.active {
+      display: block;
     }
 
     @media (max-width: 600px) {
@@ -133,29 +181,45 @@
 </head>
 <body>
   <div class="container">
-
-    <!-- ✅ 상단 GIF 로고 -->
     <img src="redcloud.gif" alt="적운 콜렉티브 애니메이션 로고" class="logo">
 
-    <!-- ✅ 제목 -->
     <h1>
       <span style="color: #509140; font-family: 'HakgyoansimBareondotumB', sans-serif;">적운</span>
       <span style="font-family: 'HakgyoansimBareondotumR', sans-serif;">콜렉티브</span>
     </h1>
 
-    <!-- ✅ 소개 텍스트 -->
-    <p>
-      적운 콜렉티브는 시각문화, 인간 중심 디자인, 사회적 실천을 잇는 비영리 창작 네트워크입니다.<br><br>
-      다양한 배경의 크리에이터들이 모여 감각을 해체하고 다시 연결하는 프로젝트를 기획하고 실행합니다.<br><br>
-      디자인하우스 적산과 협업하여, 정적인 시공간을 새롭게 읽고 쓰는 실험을 이어가고 있습니다.
-    </p>
+    <div class="statement-title">{Fun, Aesthetic} Accessibility in Practice</div>
+    <div class="statement-text">
+      <p>적운 콜렉티브는 접근성 문제를 창의적으로 해결하는 사람들이 구름처럼 모인 비영리 단체입니다.<br>
+      우리는 시각장애인과 발달장애인의 정보접근권, 휠체어 사용자의 이동권 등 다양한 접근성 문제를 단순한 말이 아닌 실천으로 해결합니다.<br>
+      접근성은 진지하거나 못생길 필요가 없습니다. 우리는 접근성이 재미있고 아름다울 수 있다고 믿습니다.<br>
+      적운 콜렉티브는 더 포용적인 사회를 만들기 위해 접근성 문제에 창의적으로 접근하고, 함께 머리를 맞대어 재치있는 솔루션을 개발할 준비가 되어 있습니다.
+      </p>
+    </div>
 
-    <!-- ✅ 돌아가기 링크 -->
+    <div class="toggles">
+      <button class="toggle-button" onclick="showContent('identity')">Identity Design & Development</button>
+      <button class="toggle-button" onclick="showContent('print')">Print Design</button>
+      <button class="toggle-button" onclick="showContent('space')">Space Design</button>
+      <button class="toggle-button" onclick="showContent('ux')">User Experience</button>
+    </div>
+
+    <div id="identity" class="content-box">Identity 관련 내용이 여기에 들어갑니다.</div>
+    <div id="print" class="content-box">Print Design 관련 내용이 여기에 들어갑니다.</div>
+    <div id="space" class="content-box">Space Design 관련 내용이 여기에 들어갑니다.</div>
+    <div id="ux" class="content-box">User Experience 관련 내용이 여기에 들어갑니다.</div>
+
     <a href="index.html" class="back-link">
       <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
       <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
     </a>
-
   </div>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content-box').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
