@@ -6,7 +6,7 @@
   <title>적운 콜렉티브 | redcloud collective</title>
   <link rel="icon" type="image/png" href="cloud.png">
 
-  <style>
+   <style>
     @font-face {
       font-family: 'HakgyoansimBareondotumB';
       src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimBareondotumB.woff2') format('woff2');
@@ -54,92 +54,12 @@
       height: auto;
       margin-bottom: 0rem;
       display: block;
-      transform: translate(-20px, 20px);
     }
 
     h1 {
       font-size: 2.8rem;
       margin-top: 0rem;
       margin-bottom: 2rem;
-    }
-
-    p {
-      font-size: 1.0rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-    }
-
-    a {
-      color: #191818;
-      font-weight: 700;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #509140;
-      text-decoration: none;
-    }
-
-    .back-link {
-      margin-top: 4rem;
-      display: inline-flex;
-      align-items: center;
-      font-size: 1rem;
-      text-decoration: none;
-      gap: 0.2rem;
-      border: none;
-    }
-
-    .back-link:hover {
-      color: #981d20;
-    }
-
-    .back-icon {
-      width: 22px;
-      height: 22px;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 4px;
-      transform: translateY(-1px);
-      object-fit: contain;
-    }
-
-    .back-thin {
-      font-family: 'HakgyoansimBareondotumR', sans-serif;
-      color: #191818;
-    }
-
-    .back-bold {
-      font-family: 'HakgyoansimBareondotumB', sans-serif;
-      color: #981d20;
-      margin-left: 0px;
-    }
-
-    .back-link:hover .back-thin,
-    .back-link:hover .back-bold {
-      color: #981d20;
-    }
-
-    .statement-title {
-      font-family: 'Times New Roman', serif;
-      font-size: 1.2rem;
-      font-style: regular;
-      margin-top: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .statement-text {
-      font-size: 1.0rem;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-
-    .toggles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1rem;
     }
 
     .toggle-button {
@@ -164,39 +84,18 @@
       padding: 1.5rem;
       background-color: transparent;
       border: 1px solid #509140;
-      border-radius: 1px;
-      box-shadow: none;
       margin-top: 1rem;
     }
 
     .content-box.active {
       display: block;
-      animation: fadeIn 0.3s ease-in-out;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .work-label {
-      transition: color 0.3s ease;
-    }
-
-    .work-together:hover .work-label {
-      color: #509140 !important;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-      .logo {
-        max-width: 140px;
-      }
+    .bio-box {
+      margin-top: 1rem;
+      background-color: #D6EDED;
+      padding: 1rem;
+      font-size: 0.95rem;
     }
   </style>
   
@@ -273,37 +172,42 @@
       
     <!-- 콜렉티브 소개 -->
 
-    <div class="toggles" style="margin-top: 3rem;">
-      <button class="toggle-button" onclick="toggleCollective()">콜렉티브 소개</button>
+    <div class="toggles">
+      <button class="toggle-button" onclick="toggleBox('collective')">콜렉티브 소개</button>
     </div>
-    <div id="collective-section" style="display: none;">
+
+    <div id="collective" class="content-box">
       <div class="toggles">
         <button class="toggle-button" onclick="showBio('san')">산</button>
-        <button class="toggle-button" onclick="showBio('sunghui')">성희</button>
+        <button class="toggle-button" onclick="showBio('seonghee')">성희</button>
         <button class="toggle-button" onclick="showBio('jaepil')">재필</button>
       </div>
-      <div id="bio-san" class="content-box">산 소개: 산업공학 박사수료, 아트디렉터 출신, 접근성 연구자</div>
-      <div id="bio-sunghui" class="content-box">성희 소개: 특수체육 석사, 경사로/공연 접근성 기획 운영</div>
-      <div id="bio-jaepil" class="content-box">재필 소개: 미디어필링 대표</div>
+      <div id="san" class="bio-box" style="display: none;">
+        - 서울대학교 산업공학과 인간공학 박사수료<br>
+        - 종합대행사 아트디렉터 출신 10년차 디자이너<br>
+        - 발달장애인, 시각장애인, 척수장애인 접근성 관련 연구 과제 운영 및 연구 논문 발표
+      </div>
+      <div id="seonghee" class="bio-box" style="display: none;">
+        - 한국체육대학교 특수체육 석사과정<br>
+        - 경사로 설치, 문화예술 공연 관련 접근성 가이드 사업 기획 및 운영
+      </div>
+      <div id="jaepil" class="bio-box" style="display: none;">
+        - 미디어필링 대표
+      </div>
     </div>
+  </div>
 
-    <script>
-      function showContent(id) {
-        document.querySelectorAll('.content-box').forEach(el => el.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-      }
+  <script>
+    function toggleBox(id) {
+      const box = document.getElementById(id);
+      box.classList.toggle('active');
+    }
 
-      function toggleCollective() {
-        const section = document.getElementById('collective-section');
-        section.style.display = (section.style.display === 'none') ? 'block' : 'none';
-        document.querySelectorAll('#collective-section .content-box').forEach(el => el.classList.remove('active'));
-      }
-
-      function showBio(id) {
-        document.querySelectorAll('#collective-section .content-box').forEach(el => el.classList.remove('active'));
-        document.getElementById('bio-' + id).classList.add('active');
-      }
-    </script>
+    function showBio(id) {
+      document.querySelectorAll('.bio-box').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 
       
       
