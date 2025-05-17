@@ -1,4 +1,3 @@
-<!-- 아래는 수정된 전체 HTML 코드입니다 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,28 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>적운 콜렉티브 | redcloud collective</title>
   <link rel="icon" type="image/png" href="cloud.png">
+
   <style>
     @font-face {
       font-family: 'HakgyoansimBareondotumB';
       src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimBareondotumB.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
     }
     @font-face {
       font-family: 'HakgyoansimBareondotumR';
       src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimBareondotumR.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
     }
 
     html {
-      background-color: #FFFECB;
+      height: 100%;
       overflow-x: hidden;
+      background-color: #FFFECB;
     }
 
     body {
+      min-height: 100vh;
       margin: 0;
       padding: 8vh 8vw;
       background: linear-gradient(to bottom, #D6EDED, #FFFECB);
-      font-family: 'HakgyoansimBareondotumR', sans-serif;
       color: #191818;
+      font-family: 'HakgyoansimBareondotumR', sans-serif;
       line-height: 1.8;
+      max-width: 100vw;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    ::selection {
+      background-color: #6c94b6;
+      color: #FFFECB;
     }
 
     .container {
@@ -37,33 +51,87 @@
 
     .logo {
       max-width: 220px;
-      transform: translate(-20px, 20px);
+      height: auto;
+      margin-bottom: 0rem;
       display: block;
-      margin-bottom: 0;
     }
 
     h1 {
       font-size: 2.8rem;
-      margin-top: 0;
+      margin-top: 0rem;
       margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.0rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      color: #191818;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #509140;
+      text-decoration: none;
+    }
+
+    .back-link {
+      margin-top: 4rem;
+      display: inline-flex;
+      align-items: center;
+      font-size: 1rem;
+      text-decoration: none;
+      gap: 0.2rem;
+      border: none;
+    }
+
+    .back-link:hover {
+      color: #981d20;
+    }
+
+    .back-icon {
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+      transform: translateY(-1px);
+      object-fit: contain;
+    }
+
+    .back-thin {
+      font-family: 'HakgyoansimBareondotumR', sans-serif;
+      color: #191818;
+    }
+
+    .back-bold {
+      font-family: 'HakgyoansimBareondotumB', sans-serif;
+      color: #981d20;
+      margin-left: 0px;
+    }
+
+    .back-link:hover .back-thin,
+    .back-link:hover .back-bold {
+      color: #981d20;
     }
 
     .statement-title {
       font-family: 'Times New Roman', serif;
       font-size: 1.2rem;
-      margin: 2.5rem 0 2rem 0;
+      font-style: regular;
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    .statement-text div {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .statement-text img {
-      width: 20px;
-      transform: translateY(5px);
+    .statement-text {
+      font-size: 1.0rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
 
     .toggles {
@@ -74,10 +142,11 @@
     }
 
     .toggle-button {
-      font-family: 'HakgyoansimBareondotumB';
+      font-family: 'HakgyoansimBareondotumB', sans-serif;
       font-size: 1rem;
       padding: 0.5rem 1rem;
       border: 1px solid #509140;
+      border-radius: 0px;
       background-color: transparent;
       color: #509140;
       cursor: pointer;
@@ -94,6 +163,8 @@
       padding: 1.5rem;
       background-color: transparent;
       border: 1px solid #509140;
+      border-radius: 1px;
+      box-shadow: none;
       margin-top: 1rem;
     }
 
@@ -101,139 +172,84 @@
       display: block;
     }
 
-    .bio-box {
-      display: none;
-      margin-top: 1rem;
-      background-color: #D6EDED;
-      padding: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .work-together {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.2rem;
-      cursor: pointer;
-      margin-top: 1.5rem;
-    }
-
-    .work-icon {
-      width: 22px;
-      transform: translateY(-1px);
-      object-fit: contain;
-      margin-right: 4px;
-    }
-
     .work-label {
-      font-family: 'HakgyoansimBareondotumB';
-      font-size: 1.1rem;
-      color: #191818;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
     .work-together:hover .work-label {
-      color: #509140;
-    }
-
-    .back-link {
-      margin-top: 3rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.2rem;
-      font-size: 1rem;
-      text-decoration: none;
-    }
-
-    .back-icon {
-      width: 22px;
-      transform: translateY(-1px);
-      object-fit: contain;
-    }
-
-    .back-thin {
-      font-family: 'HakgyoansimBareondotumR';
-      color: #191818;
-    }
-
-    .back-bold {
-      font-family: 'HakgyoansimBareondotumB';
-      color: #981d20;
-      margin-left: 1px;
-    }
-
-    .back-link:hover .back-thin,
-    .back-link:hover .back-bold {
-      color: #981d20;
-    }
-
-    #copy-alert {
-      display: none;
-      color: #509140;
-      font-family: 'HakgyoansimBareondotumB';
-      font-size: 0.95rem;
+      color: #509140 !important;
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      .logo { max-width: 140px; }
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .logo {
+        max-width: 140px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="redcloud.gif" alt="적운 콜렉티브 애니메이션 로고" class="logo">
+<img src="redcloud.gif" alt="적운 콜렉티브 애니메이션 로고" class="logo" style="transform: translate(-50px, 50px);">
+ <!-- 제목 -->
     <h1>
-      <span style="color: #509140; font-family: 'HakgyoansimBareondotumB';">적운</span>
-      <span style="font-family: 'HakgyoansimBareondotumR';">콜렉티브</span>
+      <span style="color: #509140; font-family: 'HakgyoansimBareondotumB', sans-serif;">적운</span>
+      <span style="font-family: 'HakgyoansimBareondotumR', sans-serif;">콜렉티브</span>
     </h1>
-
+<!-- 본문 -->
     <div class="statement-title">{Fun, Aesthetic} Accessibility in Practice</div>
     <div class="statement-text">
-      <div><img src="redcloud.png"><span>적운 콜렉티브는 접근성 문제를 창의적으로 해결하는 사람들이 구름처럼 모인 비영리 단체입니다. 접근성은 진지하거나 못생길 필요가 없습니다. 우리는 접근성이 재미있고 아름다울 수 있다고 믿습니다.</span></div>
-      <div><img src="redcloud.png"><span>우리는 시각장애인과 발달장애인의 정보접근권, 휠체어 사용자의 이동권 등 다양한 접근성 문제를 단순한 말이 아닌 실천으로 해결합니다.</span></div>
-      <div><img src="redcloud.png"><span>적운 콜렉티브는 더 포용적인 사회를 만들기 위해 전략가, 디자이너, 엔지니어, 전문 연구자 집단이 함께 머리를 맞대어 재치있는 솔루션을 개발할 준비가 되어 있습니다.</span></div>
+      <div style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 1.2rem;">
+        <img src="redcloud.png" alt="구름아이콘" style="width: 20px; height: auto; transform: translateY(5px);">
+        <span>적운 콜렉티브는 접근성 문제를 창의적으로 해결하는 사람들이 구름처럼 모인 비영리 단체입니다. 접근성은 진지하거나 못생길 필요가 없습니다. 우리는 접근성이 재미있고 아름다울 수 있다고 믿습니다.</span>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 1.2rem;">
+        <img src="redcloud.png" alt="구름아이콘" style="width: 20px; height: auto; transform: translateY(5px);">
+        <span>우리는 시각장애인과 발달장애인의 정보접근권, 휠체어 사용자의 이동권 등 다양한 접근성 문제를 단순한 말이 아닌 실천으로 해결합니다.</span>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+        <img src="redcloud.png" alt="구름아이콘" style="width: 20px; height: auto; transform: translateY(5px);">
+        <span>적운 콜렉티브는 더 포용적인 사회를 만들기 위해 전략가, 디자이너, 엔지니어, 전문 연구자 집단이 함께 머리를 맞대어 재치있는 솔루션을 개발할 준비가 되어 있습니다.</span>
+      </div>
     </div>
-
-    <!-- 작업영역 -->
+ <!-- 작업물 -->
     <div class="toggles">
       <button class="toggle-button" onclick="showContent('identity')">아이덴티티 디자인과 개발</button>
       <button class="toggle-button" onclick="showContent('print')">편집디자인</button>
       <button class="toggle-button" onclick="showContent('space')">공간디자인</button>
       <button class="toggle-button" onclick="showContent('ux')">사용자경험</button>
     </div>
+
     <div id="identity" class="content-box">Identity 관련 내용이 여기에 들어갑니다.</div>
     <div id="print" class="content-box">Print Design 관련 내용이 여기에 들어갑니다.</div>
     <div id="space" class="content-box">Space Design 관련 내용이 여기에 들어갑니다.</div>
     <div id="ux" class="content-box">User Experience 관련 내용이 여기에 들어갑니다.</div>
 
-    <!-- 콜렉티브 소개 -->
-    <div class="toggles" style="margin-top: 2rem;">
-      <button class="toggle-button" onclick="toggleBox('collective')">콜렉티브 소개</button>
-    </div>
-    <div id="collective" class="content-box">
-      <div class="toggles">
-        <button class="toggle-button" onclick="showBio('san')">산</button>
-        <button class="toggle-button" onclick="showBio('seonghee')">성희</button>
-        <button class="toggle-button" onclick="showBio('jaepil')">재필</button>
+    <p style="margin-top: 4rem; margin-bottom: 0rem; font-family: 'HakgyoansimBareondotumR'; font-size: 1rem; font-weight: 400;">함께 해결하고 싶은 문제가 있는 누구나, 적운의 문을 두드려주세요!</p>
+
+    <!-- 적운과 함께 일하기 -->
+    <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+      <div class="work-together" onclick="copyEmail()" style="display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;">
+        <img src="suncloud.png" alt="suncloud icon" class="work-icon" style="width: 22px; height: auto; display: inline-block; vertical-align: middle; transform: translateY(-1px); object-fit: contain; margin-right: 4px;">
+        <span class="work-label" style="font-family: 'HakgyoansimBareondotumB'; font-size: 1.1rem; color: #191818;">적운과 함께 일하기</span>
       </div>
-      <div id="san" class="bio-box">- 서울대학교 산업공학과 인간공학 박사수료<br>- 종합대행사 아트디렉터 출신 10년차 디자이너<br>- 발달장애인, 시각장애인, 척수장애인 접근성 관련 연구 과제 운영 및 연구 논문 발표</div>
-      <div id="seonghee" class="bio-box">- 한국체육대학교 특수체육 석사과정<br>- 경사로 설치, 문화예술 공연 관련 접근성 가이드 사업 기획 및 운영</div>
-      <div id="jaepil" class="bio-box">- 미디어필링 대표</div>
-    </div>
+      <div id="copy-alert" style="display:none; font-size: 0.95rem; color: #509140; font-family: 'HakgyoansimBareondotumB';">
+        주성희 공동짱의 이메일 {jutopia@redmountain.kr} 이 복사되었습니다!
+      </div>
 
-    <!-- 협업 -->
-    <p style="margin-top: 4rem;">함께 해결하고 싶은 문제가 있는 누구나, 적운의 문을 두드려주세요!</p>
-    <div class="work-together" onclick="copyEmail()">
-      <img src="suncloud.png" alt="suncloud icon" class="work-icon">
-      <span class="work-label">적운과 함께 일하기</span>
+      <!-- 디자인하우스 적산으로 돌아가기  -->
+      <a href="index.html" class="back-link">
+        <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
+        <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
+      </a>
     </div>
-    <div id="copy-alert">주성희 공동짱의 이메일 {jutopia@redmountain.kr} 이 복사되었습니다!</div>
-
-    <!-- 돌아가기 -->
-    <a href="index.html" class="back-link">
-      <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
-      <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
-    </a>
   </div>
 
   <script>
@@ -242,22 +258,14 @@
       document.getElementById(id).classList.add('active');
     }
 
-    function toggleBox(id) {
-      const box = document.getElementById(id);
-      box.classList.toggle('active');
-    }
-
-    function showBio(id) {
-      document.querySelectorAll('.bio-box').forEach(el => el.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-
     function copyEmail() {
       const email = 'jutopia@redmountain.kr';
       navigator.clipboard.writeText(email).then(() => {
         const alertBox = document.getElementById('copy-alert');
         alertBox.style.display = 'block';
-        setTimeout(() => { alertBox.style.display = 'none'; }, 3000);
+        setTimeout(() => {
+          alertBox.style.display = 'none';
+        }, 3000);
       });
     }
   </script>
