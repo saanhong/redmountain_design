@@ -8,19 +8,15 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
   <link rel="apple-touch-icon" href="/web-thumbnail.png">
-  <meta name="description" content=<meta name="description" content="종이, 나무, 철/비철, 아크릴 등 다양한 소재를 섞어내어 아이덴티티, 간판, 편집물, 구조물을 만듭니다. 고객님의 이야기를 기술적으로 담아냅니다. 인간공학 엔지니어가 설계합니다. ">
+  <meta name="description" content="종이, 나무, 철/비철, 아크릴 등 다양한 소재를 섞어내어 아이덴티티, 간판, 편집물, 구조물을 만듭니다. 고객님의 이야기를 기술적으로 담아냅니다. 인간공학 엔지니어가 설계합니다.">
   <meta name="google-site-verification" content="XdYawOtT2EfZ4aqjaweXVOlD2HPcZ7r7WLmGmgBHpdM" />
-  
   <meta name="application-name" content="디자인하우스 적산">
   <meta property="og:site_name" content="디자인하우스 적산" />
-  
   <meta property="og:title" content="디자인하우스 적산 | designhouse redmountain" />
   <meta property="og:description" content="정적인 시공간과 만져지는 것의 힘을 믿습니다. 인간공학 엔지니어가 설계합니다." />
   <meta property="og:image" content="https://redmountain.kr/og-thumbnail.jpg" />
   <meta property="og:url" content="https://redmountain.kr" />
   <meta property="og:type" content="website" />
-
-
   <style>
     @font-face {
       font-family: 'HakgyoansimBareondotumB';
@@ -34,7 +30,6 @@
       font-weight: 400;
       font-style: normal;
     }
-
     body {
       margin: 0;
       background-color: #191818;
@@ -45,8 +40,7 @@
       align-items: center;
       min-height: 100vh;
     }
-
-     ::selection {
+    ::selection {
       background-color: #981d20;
       color: #dcdcdc;
     }
@@ -56,18 +50,14 @@
       padding: 0 5vw;
       box-sizing: border-box;
     }
-  
     .container > * {
       padding-left: 0;
     }
-
-
     .logo-container {
       text-align: left;
       margin-bottom: 2rem;
       padding-left: 0;
     }
-
     .logo-button {
       background: none;
       border: none;
@@ -78,44 +68,35 @@
       display: flex;
       justify-content: flex-start;
     }
-
     .logo-button:hover {
       transform: scale(1);
     }
-
     .logo-button:focus {
       outline: none;
     }
-
     .logo {
-
       width: auto;
       height: auto;
       max-width: 25%;
     }
-
     h1 {
       font-size: 2.5rem;
       margin-bottom: 2.5rem;
     }
-
     .title-combined {
       white-space: nowrap;
       display: inline-block;
     }
-
     .title-thin {
       font-family: 'HakgyoansimBareondotumR', sans-serif;
       font-weight: 400;
       color: #dcdcdc;
     }
-
     .title-bold {
       font-family: 'HakgyoansimBareondotumB', sans-serif;
       font-weight: 700;
       color: #981d20;
     }
-
     p {
       font-family: 'HakgyoansimBareondotumR', sans-serif;
       font-weight: 400;
@@ -123,13 +104,11 @@
       margin-bottom: 2.5rem;
       line-height: 1.6;
     }
-
     .links {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
     }
-
     .link-item {
       display: flex;
       align-items: center;
@@ -142,48 +121,38 @@
       transition: color 0.3s ease;
       cursor: pointer;
     }
-
     .link-item:hover {
       color: #981d20;
     }
-
     .redcloud-link:hover {
-  color: #509140;
-}
-
+      color: #509140;
+    }
     .link-item img {
       width: 20px;
       height: 20px;
       flex-shrink: 0;
       display: block;
     }
-
     #copy-alert {
       display: none;
-      margin-top: 1rem;
+      font-size: 0.95rem;
       color: #981d20;
-      font-size: 1rem;
       font-family: 'HakgyoansimBareondotumB', sans-serif;
     }
-
     @media (max-width: 600px) {
       .container {
         padding: 0 7vw;
       }
-
       h1 {
         font-size: 2rem;
       }
-
       p {
         font-size: 0.95rem;
         line-height: 1.7;
       }
-
       .link-item {
         font-size: 1.1rem;
       }
-
       .link-item img {
         width: 22px;
         height: 22px;
@@ -193,13 +162,11 @@
 </head>
 <body>
   <div class="container">
-
     <div class="logo-container">
       <button onclick="refreshPage()" class="logo-button" aria-label="새로고침">
         <img src="logo.svg" alt="디자인하우스 적산 로고" class="logo">
       </button>
     </div>
-    
     <h1>
       <span class="title-combined">
         <span class="title-thin">디자인하우스 </span><span class="title-bold">적산</span>
@@ -222,44 +189,35 @@
         <img src="instagram-icon.svg" alt="인스타그램 아이콘">
         적산 인스타그램
       </a>
-      <a href="#" onclick="copyEmail();" class="link-item">
+      <a href="#" onclick="copyEmail();" class="link-item" id="copy-trigger">
         <img src="mail-icon.svg" alt="메일 아이콘">
         작업 문의
       </a>
-
-      
-
-    <div id="copy-alert">
-      디자인하우스 적산의 이메일 주소 (red@redmountain.kr) 가 복사되었습니다.
+      <div id="copy-alert">
+        디자인하우스 적산의 이메일 주소 {red@redmountain.kr} 가 복사되었습니다.
+      </div>
+      <a href="https://redmountain.kr/redcloud" target="_blank" class="link-item redcloud-link">
+        <img src="cloud.png" alt="적운 콜렉티브 아이콘">
+        적운 콜렉티브
+      </a>
     </div>
   </div>
-
-
-      <a href="https://redmountain.kr/redcloud" target="_blank" class="link-item redcloud-link">
-    <img src="cloud.png" alt="적운 콜렉티브 아이콘">
-    적운 콜렉티브
-    </a>
-      
-    </div>
-
-  
-
   <script>
-
     function refreshPage() {
       window.location.reload();
     }
-
-
     function copyEmail() {
       const email = 'red@redmountain.kr';
       navigator.clipboard.writeText(email).then(function() {
-        document.getElementById('copy-alert').style.display = 'block';
+        const alertBox = document.getElementById('copy-alert');
+        const trigger = document.getElementById('copy-trigger');
+        trigger.insertAdjacentElement('afterend', alertBox);
+        alertBox.style.display = 'block';
         setTimeout(() => {
-          document.getElementById('copy-alert').style.display = 'none';
-        }, 3000); 
+          alertBox.style.display = 'none';
+        }, 3000);
       }, function(err) {
-        alert('복사에 실패했습니다. 직접 입력해주세요 (red@redmountain.kr).');
+        alert('복사에 실패했습니다. 직접 입력해주세요 {red@redmountain.kr}.');
       });
     }
   </script>
