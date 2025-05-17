@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>적운 콜렉티브 | redcloud collective</title>
-
   <link rel="icon" type="image/png" href="cloud.png">
 
   <style>
@@ -20,19 +19,18 @@
       font-weight: 400;
       font-style: normal;
     }
-    
-        
+
     html {
       height: 100%;
-      background: linear-gradient(to bottom, #D6EDED, #FFFECB);
       overflow-x: hidden;
+      background: none;
     }
-    
+
     body {
-      min-height: 100%;
+      min-height: 100vh;
       margin: 0;
       padding: 8vh 8vw;
-      background: none; /* body엔 별도 배경 없음 (html이 담당) */
+      background: linear-gradient(to bottom, #D6EDED, #FFFECB);
       color: #191818;
       font-family: 'HakgyoansimBareondotumR', sans-serif;
       line-height: 1.8;
@@ -40,7 +38,7 @@
       overflow-x: hidden;
       position: relative;
     }
-        
+
     ::selection {
       background-color: #6c94b6;
       color: #FFFECB;
@@ -136,7 +134,7 @@
       margin-bottom: 2.5rem;
     }
 
-      .toggles {
+    .toggles {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -181,7 +179,7 @@
     .work-together:hover .work-label {
       color: #509140 !important;
     }
-        
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2.2rem;
@@ -221,7 +219,6 @@
         <span>적운 콜렉티브는 더 포용적인 사회를 만들기 위해 전략가, 디자이너, 엔지니어, 전문 연구자 집단이 함께 머리를 맞대어 재치있는 솔루션을 개발할 준비가 되어 있습니다.</span>
       </div>
     </div>
-    
 
     <div class="toggles">
       <button class="toggle-button" onclick="showContent('identity')">아이덴티티 디자인과 개발</button>
@@ -235,32 +232,26 @@
     <div id="space" class="content-box">Space Design 관련 내용이 여기에 들어갑니다.</div>
     <div id="ux" class="content-box">User Experience 관련 내용이 여기에 들어갑니다.</div>
 
-    <p style="margin-top: 4rem; font-family: 'HakgyoansimBareondotumR'; font-size: 1.05rem; font-weight: 400;">함께 해결하고 싶은 문제가 있는 누구나, 적운의 문을 두드려주세요!</p>
+    <p style="margin-top: 2rem; margin-bottom: 0.5rem; font-family: 'HakgyoansimBareondotumR'; font-size: 1.05rem; font-weight: 400;">함께 해결하고 싶은 문제가 있는 누구나, 적운의 문을 두드려주세요!</p>
 
-<!-- 적운과 함께 일하기 섹션 -->
-      <div style="margin-top: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+    <!-- 적운과 함께 일하기 섹션 -->
+    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
       <div class="work-together" onclick="copyEmail()" style="display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;">
         <img src="suncloud.png" alt="suncloud icon" class="work-icon" style="width: 22px; height: auto; display: inline-block; vertical-align: middle; transform: translateY(-1px); object-fit: contain; margin-right: 4px;">
-        <span class="work-label" style="font-family: 'HakgyoansimBareondotumB'; font-size: 1rem; color: #191818; transition: color 0.3s ease;">적운과 함께 일하기</span>
+        <span class="work-label" style="font-family: 'HakgyoansimBareondotumB'; font-size: 1rem; color: #191818;">적운과 함께 일하기</span>
       </div>
       <div id="copy-alert" style="display:none; font-size: 0.95rem; color: #509140; font-family: 'HakgyoansimBareondotumB';">
         주성희 공동짱의 이메일 {jutopia@redmountain.kr} 이 복사되었습니다!
       </div>
 
-      <!-- 디자인하우스 적산으로 돌아가기 링크도 포함 -->
+      <!-- 디자인하우스 적산으로 돌아가기 링크 포함 -->
       <a href="index.html" class="back-link">
         <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
         <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
       </a>
     </div>
-
   </div>
 
-  <style>
-    .work-together:hover .work-label {
-      color: #509140;
-    }
-  </style>
   <script>
     function showContent(id) {
       document.querySelectorAll('.content-box').forEach(el => el.classList.remove('active'));
@@ -278,7 +269,5 @@
       });
     }
   </script>
-</body>
-  
 </body>
 </html>
