@@ -27,15 +27,17 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      background-color: #FFFECB; /* ✅ 바닥을 연노랑 단색으로 */
+      background-color: #FFFECB;
       overflow-x: hidden;
     }
+
     body {
       background: linear-gradient(to bottom, #D6EDED, #FFFECB);
       color: #191818;
       font-family: 'HakgyoansimBareondotumR', sans-serif;
       padding: 8vh 8vw;
       line-height: 1.8;
+      position: relative;
     }
 
     .container {
@@ -46,13 +48,12 @@
     .logo {
       max-width: 180px;
       height: auto;
-      margin-bottom: 0.5rem; /* ✅ 1rem으로 줄임 */
+      margin-bottom: 0.5rem;
       display: block;
     }
 
     h1 {
       font-size: 2.8rem;
-      font-family: 'HakgyoansimBareondotumB', sans-serif;
       margin-top: 0.1rem;
       margin-bottom: 2rem;
     }
@@ -74,15 +75,41 @@
       color: #509140;
     }
 
+    /* ✅ 수정된 back-link 스타일 */
     .back-link {
       margin-top: 4rem;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       font-size: 1rem;
       border-bottom: 1px solid transparent;
+      gap: 0.4rem;
     }
 
     .back-link:hover {
-      border-color: #509140;
+      color: #981d20;
+      border-color: #981d20;
+    }
+
+    .back-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    .back-thin {
+      font-family: 'HakgyoansimBareondotumR', sans-serif;
+      color: #191818;
+    }
+
+    .back-bold {
+      font-family: 'HakgyoansimBareondotumB', sans-serif;
+      color: #981d20;
+    }
+
+    .back-link:hover .back-thin,
+    .back-link:hover .back-bold {
+      color: #981d20;
     }
 
     @media (max-width: 600px) {
@@ -102,21 +129,30 @@
 </head>
 <body>
   <div class="container">
-    <!-- ✅ 상단에 애니메이션 GIF 로고 삽입 -->
+
+    <!-- ✅ 상단 GIF 로고 -->
     <img src="redcloud.gif" alt="적운 콜렉티브 애니메이션 로고" class="logo">
 
+    <!-- ✅ 제목 -->
     <h1>
-  <span style="color: #509140; font-family: 'HakgyoansimBareondotumB', sans-serif;">적운</span>
-  <span style="font-family: 'HakgyoansimBareondotumR', sans-serif;">콜렉티브</span>
-</h1>
+      <span style="color: #509140; font-family: 'HakgyoansimBareondotumB', sans-serif;">적운</span>
+      <span style="font-family: 'HakgyoansimBareondotumR', sans-serif;">콜렉티브</span>
+    </h1>
 
+    <!-- ✅ 소개 텍스트 -->
     <p>
       적운 콜렉티브는 시각문화, 인간 중심 디자인, 사회적 실천을 잇는 비영리 창작 네트워크입니다.<br><br>
       다양한 배경의 크리에이터들이 모여 감각을 해체하고 다시 연결하는 프로젝트를 기획하고 실행합니다.<br><br>
       디자인하우스 적산과 협업하여, 정적인 시공간을 새롭게 읽고 쓰는 실험을 이어가고 있습니다.
     </p>
 
-    <a href="index.html" class="back-link">← 디자인하우스 적산으로 돌아가기</a>
+    <!-- ✅ 돌아가기 링크 -->
+    <a href="index.html" class="back-link">
+      <img src="favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
+      <span class="back-thin">디자인하우스</span>
+      <span class="back-bold">적산</span>으로 돌아가기
+    </a>
+
   </div>
 </body>
 </html>
