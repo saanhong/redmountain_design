@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>적운 콜렉티브 | 赤雲 Collective</title>
+  <title>적운 콜렉티브 | Red Cloud Collective</title>
+
+  <!-- ✅ 파비콘 설정 -->
+  <link rel="icon" type="image/png" href="cloud.png">
+
+  <!-- ✅ 폰트 -->
   <style>
     @font-face {
       font-family: 'HakgyoansimBareondotumB';
@@ -20,9 +25,9 @@
 
     body {
       margin: 0;
+      background-color: #6c94b6;
+      color: #191818;
       font-family: 'HakgyoansimBareondotumR', sans-serif;
-      background-color: #6c94b6; /* blue */
-      color: #191818; /* black */
       padding: 8vh 8vw;
       line-height: 1.8;
     }
@@ -32,10 +37,16 @@
       margin: 0 auto;
     }
 
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 2rem;
+      display: block;
+    }
+
     h1 {
       font-size: 2.8rem;
       font-family: 'HakgyoansimBareondotumB', sans-serif;
-      color: #191818;
       margin-bottom: 2rem;
     }
 
@@ -53,7 +64,7 @@
     }
 
     a:hover {
-      color: #509140; /* green */
+      color: #509140;
     }
 
     .back-link {
@@ -80,14 +91,18 @@
 </head>
 <body>
   <div class="container">
-    <h1>적운 콜렉티브 (Red Cloud Collective)</h1>
+    <!-- ✅ 로고 이미지 삽입 -->
+    <img src="redcloud.png" alt="적운 콜렉티브 로고" class="logo">
+
+    <h1>적운 콜렉티브<br><span style="font-size: 1.4rem; font-weight: 400;">Red Cloud Collective</span></h1>
+
     <p>
       적운 콜렉티브는 시각문화, 인간 중심 디자인, 사회적 실천을 잇는 비영리 창작 네트워크입니다.<br><br>
       다양한 배경의 크리에이터들이 모여 감각을 해체하고 다시 연결하는 프로젝트를 기획하고 실행합니다.<br><br>
       디자인하우스 적산과 협업하여, 정적인 시공간을 새롭게 읽고 쓰는 실험을 이어가고 있습니다.
     </p>
 
-    <a href="https://redmountain.kr" class="back-link">← 디자인하우스 적산으로 돌아가기</a>
+    <a href="index.html" class="back-link">← 디자인하우스 적산으로 돌아가기</a>
   </div>
 </body>
 </html>
