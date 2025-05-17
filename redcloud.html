@@ -54,6 +54,7 @@
       height: auto;
       margin-bottom: 0rem;
       display: block;
+      transform: translate(-20px, 20px);
     }
 
     h1 {
@@ -170,6 +171,12 @@
 
     .content-box.active {
       display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .work-label {
@@ -184,26 +191,26 @@
       h1 {
         font-size: 2.2rem;
       }
-
       p {
         font-size: 1rem;
       }
-
       .logo {
         max-width: 140px;
       }
     }
   </style>
+  
 </head>
 <body>
+ <!-- 애니메이션 -->
   <div class="container">
 <img src="redcloud.gif" alt="적운 콜렉티브 애니메이션 로고" class="logo" style="transform: translate(-20px, 20px);">
-
+ <!-- 제목 -->
     <h1>
       <span style="color: #509140; font-family: 'HakgyoansimBareondotumB', sans-serif;">적운</span>
       <span style="font-family: 'HakgyoansimBareondotumR', sans-serif;">콜렉티브</span>
     </h1>
-
+ <!-- Statement -->
     <div class="statement-title">{Fun, Aesthetic} Accessibility in Practice</div>
     <div class="statement-text">
       <div style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 1.2rem;">
@@ -220,6 +227,7 @@
       </div>
     </div>
 
+    <!-- Works -->
     <div class="toggles">
       <button class="toggle-button" onclick="showContent('identity')">아이덴티티 디자인과 개발</button>
       <button class="toggle-button" onclick="showContent('print')">편집디자인</button>
@@ -231,10 +239,11 @@
     <div id="print" class="content-box">Print Design 관련 내용이 여기에 들어갑니다.</div>
     <div id="space" class="content-box">Space Design 관련 내용이 여기에 들어갑니다.</div>
     <div id="ux" class="content-box">User Experience 관련 내용이 여기에 들어갑니다.</div>
-
+   
+    <!-- 적운과 함께 일하기 -->
     <p style="margin-top: 4rem; margin-bottom: 0rem; font-family: 'HakgyoansimBareondotumR'; font-size: 1rem; font-weight: 400;">함께 해결하고 싶은 문제가 있는 누구나, 적운의 문을 두드려주세요!</p>
 
-    <!-- 적운과 함께 일하기 섹션 -->
+
     <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
       <div class="work-together" onclick="copyEmail()" style="display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;">
         <img src="suncloud.png" alt="suncloud icon" class="work-icon" style="width: 22px; height: auto; display: inline-block; vertical-align: middle; transform: translateY(-1px); object-fit: contain; margin-right: 4px;">
@@ -243,16 +252,7 @@
       <div id="copy-alert" style="display:none; font-size: 0.95rem; color: #509140; font-family: 'HakgyoansimBareondotumB';">
         주성희 공동짱의 이메일 {jutopia@redmountain.kr} 이 복사되었습니다!
       </div>
-
-      <!-- 디자인하우스 적산으로 돌아가기 링크 포함 -->
-      <a href="index.html" class="back-link">
-        <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
-        <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
-      </a>
-    </div>
-  </div>
-
-  <script>
+      <script>
     function showContent(id) {
       document.querySelectorAll('.content-box').forEach(el => el.classList.remove('active'));
       document.getElementById(id).classList.add('active');
@@ -269,5 +269,52 @@
       });
     }
   </script>
+
+      
+    <!-- 콜렉티브 소개 -->
+
+    <div class="toggles" style="margin-top: 3rem;">
+      <button class="toggle-button" onclick="toggleCollective()">콜렉티브 소개</button>
+    </div>
+    <div id="collective-section" style="display: none;">
+      <div class="toggles">
+        <button class="toggle-button" onclick="showBio('san')">산</button>
+        <button class="toggle-button" onclick="showBio('sunghui')">성희</button>
+        <button class="toggle-button" onclick="showBio('jaepil')">재필</button>
+      </div>
+      <div id="bio-san" class="content-box">산 소개: 산업공학 박사수료, 아트디렉터 출신, 접근성 연구자</div>
+      <div id="bio-sunghui" class="content-box">성희 소개: 특수체육 석사, 경사로/공연 접근성 기획 운영</div>
+      <div id="bio-jaepil" class="content-box">재필 소개: 미디어필링 대표</div>
+    </div>
+
+    <script>
+      function showContent(id) {
+        document.querySelectorAll('.content-box').forEach(el => el.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+      }
+
+      function toggleCollective() {
+        const section = document.getElementById('collective-section');
+        section.style.display = (section.style.display === 'none') ? 'block' : 'none';
+        document.querySelectorAll('#collective-section .content-box').forEach(el => el.classList.remove('active'));
+      }
+
+      function showBio(id) {
+        document.querySelectorAll('#collective-section .content-box').forEach(el => el.classList.remove('active'));
+        document.getElementById('bio-' + id).classList.add('active');
+      }
+    </script>
+
+      
+      
+      <!-- 디자인하우스 적산으로 돌아가기 링크 포함 -->
+      <a href="index.html" class="back-link">
+        <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
+        <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
+      </a>
+    </div>
+  </div>
+
+
 </body>
 </html>
