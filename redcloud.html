@@ -73,27 +73,29 @@
 
     a:hover {
       color: #509140;
+      text-decoration: none;
     }
 
-    /* ✅ 수정된 back-link 스타일 */
+    /* ✅ 돌아가기 링크 스타일 */
     .back-link {
       margin-top: 4rem;
       display: inline-flex;
       align-items: center;
       font-size: 1rem;
-      border-bottom: 1px solid transparent;
-      gap: 0.4rem;
+      text-decoration: none;
+      gap: 0.2rem; /* ✅ 텍스트 간격 좁힘 */
+      border: none;
     }
 
     .back-link:hover {
       color: #981d20;
-      border-color: #981d20;
     }
 
     .back-icon {
       width: 18px;
       height: 18px;
       display: inline-block;
+      vertical-align: middle;
       margin-right: 4px;
     }
 
@@ -105,6 +107,7 @@
     .back-bold {
       font-family: 'HakgyoansimBareondotumB', sans-serif;
       color: #981d20;
+      margin-left: 1px; /* ✅ 아주 좁게 간격 조정 */
     }
 
     .back-link:hover .back-thin,
@@ -149,8 +152,7 @@
     <!-- ✅ 돌아가기 링크 -->
     <a href="index.html" class="back-link">
       <img src="favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
-      <span class="back-thin">디자인하우스</span>
-      <span class="back-bold">적산</span>으로 돌아가기
+      <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
     </a>
 
   </div>
