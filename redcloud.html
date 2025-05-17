@@ -253,5 +253,20 @@
       });
     }
   </script>
+
+      <a href="index.html" class="back-link">
+      <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
+      <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
+    </a>
+  </div>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content-box').forEach(el => el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+  
 </body>
 </html>
