@@ -35,10 +35,6 @@
       background-color: #191818;
       color: #dcdcdc;
       font-family: 'HakgyoansimBareondotumR', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
     }
     ::selection {
       background-color: #981d20;
@@ -50,8 +46,11 @@
       padding: 0 5vw;
       box-sizing: border-box;
     }
-    .container > * {
-      padding-left: 0;
+    .container {
+      max-width: 960px;
+      width: 100%;
+      padding: 8vh 5vw; /* 상하 여백 복원 */
+      box-sizing: border-box;
     }
     .logo-container {
       text-align: left;
