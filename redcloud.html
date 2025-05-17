@@ -244,43 +244,32 @@
         주성희 공동짱의 이메일 {jutopia@redmountain.kr} 이 복사되었습니다!
       </div>
 
-     <!-- 콜렉티브 소개 -->
-    <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
-      <div class="work-together" onclick="toggleBox('collective-box')" style="display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;">
-        <img src="suncloud.png" alt="suncloud icon" class="work-icon" style="width: 22px; height: auto; vertical-align: middle; object-fit: contain; margin-right: 4px;">
-        <span class="work-label" style="font-family: 'HakgyoansimBareondotumB'; font-size: 1.1rem; color: #191818;">콜렉티브 소개</span>
+      <!-- 콜렉티브 소개 (Work label 형식 + 토글박스 포함) -->
+      <div class="work-together" onclick="toggleBox('collective-box')">
+        <img src="suncloud.png" alt="icon">
+        <span class="work-label">콜렉티브 소개</span>
       </div>
-    
-     <div class="toggles">
-      <button class="toggle-button" onclick="showContent('san')">산</button>
-      <button class="toggle-button" onclick="showContent('seonghee')">성희</button>
-      <button class="toggle-button" onclick="showContent('jaephil')">재필</button>
-    </div>
-    
-    <!-- 바이오 박스들 -->
-    <div id="san" class="content-box" style="display: none;">
+      
+      <div id="collective-box" style="display:none;">
+        <div class="toggles">
+          <button class="toggle-button" onclick="showContent('san')">산</button>
+          <button class="toggle-button" onclick="showContent('seonghee')">성희</button>
+          <button class="toggle-button" onclick="showContent('jaephil')">재필</button>
+        </div>
+      
+        <div id="san" class="content-box">
       - 서울대학교 산업공학과 인간공학 박사수료<br>
       - 종합대행사 아트디렉터 출신 10년차 디자이너<br>
-      - 발달장애인, 시각장애인, 척수장애인 접근성 관련 연구 과제 운영 및 연구 논문 발표
-    </div>
-    
-    <div id="seonghee" class="content-box" style="display: none;">
+      - 발달장애인, 시각장애인, 척수장애인 접근성 관련 연구 과제 운영 및 연구 논문 발표</div>
+        <div id="seonghee" class="content-box">
       - 한국체육대학교 특수체육 석사과정<br>
-      - 경사로 설치, 문화예술 공연 관련 접근성 가이드 사업 기획 및 운영
-    </div>
-    
-    <div id="jaephil" class="content-box" style="display: none;">
+      - 경사로 설치, 문화예술 공연 관련 접근성 가이드 사업 기획 및 운영</div>
+        <div id="jaephil" class="content-box">    
       - 서울시립대학교 문화예술학 석사<br>
-      - 미디어필링 대표
-    </div>
-    
-        <div id="jaephil" class="bio-box" style="display: none; background-color: rgba(214, 237, 237, 0.8); padding: 1rem;">
-          - 서울시립대학교 문화예술학 석사<br>
-          - 미디어필링 대표
-        </div>
+      - 미디어필링 대표</div>
       </div>
-    </div>
-          
+     
+      
       <!-- 디자인하우스 적산으로 돌아가기  -->
       <a href="index.html" class="back-link">
         <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
