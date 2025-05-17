@@ -227,22 +227,30 @@
     <div id="space" class="content-box">Space Design 관련 내용이 여기에 들어갑니다.</div>
     <div id="ux" class="content-box">User Experience 관련 내용이 여기에 들어갑니다.</div>
 
-    <!-- 적운과 함께 일하기 섹션 -->
-    <div class="work-together" style="margin-top: 4rem; display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;">
-      <img src="suncloud.png" alt="suncloud icon" class="work-icon" style="width: 22px; height: auto; display: inline-block; vertical-align: middle; transform: translateY(-1px); object-fit: contain; margin-right: 4px;">
-      <span class="work-label" onclick="copyEmail()" style="font-family: 'HakgyoansimBareondotumB'; font-size: 1rem; color: #191818; transition: color 0.3s ease;">적운과 함께 일하기</span>
-    </div>
-    <div id="copy-alert" style="display:none; margin-top: 1rem; font-size: 0.95rem; color: #509140; font-family: 'HakgyoansimBareondotumB';">
-      주성희 공동짱의 이메일 {jutopia@redmountain.kr} 이 복사되었습니다!
-    </div>
+        <!-- 적운과 함께 일하기 섹션 -->
+    <div style="margin-top: 4rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;">
+      <div class="work-together" onclick="copyEmail()" style="display: inline-flex; align-items: center; gap: 0.2rem; cursor: pointer;">
+        <img src="suncloud.png" alt="suncloud icon" class="work-icon" style="width: 22px; height: auto; display: inline-block; vertical-align: middle; transform: translateY(-1px); object-fit: contain; margin-right: 4px;">
+        <span class="work-label" style="font-family: 'HakgyoansimBareondotumB'; font-size: 1rem; color: #191818; transition: color 0.3s ease;">적운과 함께 일하기</span>
+      </div>
+      <div id="copy-alert" style="display:none; font-size: 0.95rem; color: #509140; font-family: 'HakgyoansimBareondotumB';">
+        주성희 공동짱의 이메일 {jutopia@redmountain.kr} 이 복사되었습니다!
+      </div>
 
-    <style>
-      .work-together:hover .work-label {
-        color: #509140;
-      }
-    </style>
+      <!-- 디자인하우스 적산으로 돌아가기 링크도 포함 -->
+      <a href="index.html" class="back-link">
+        <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
+        <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
+      </a>
+    </div>
 
   </div>
+
+  <style>
+    .work-together:hover .work-label {
+      color: #509140;
+    }
+  </style>
 
   <script>
     function showContent(id) {
@@ -259,19 +267,6 @@
           alertBox.style.display = 'none';
         }, 3000);
       });
-    }
-  </script>
-
-      <a href="index.html" class="back-link">
-      <img src="rm-favicon.png" alt="디자인하우스 적산 아이콘" class="back-icon">
-      <span class="back-thin">디자인하우스</span><span class="back-bold">적산</span>으로 돌아가기
-    </a>
-  </div>
-
-  <script>
-    function showContent(id) {
-      document.querySelectorAll('.content-box').forEach(el => el.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
     }
   </script>
 </body>
