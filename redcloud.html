@@ -189,30 +189,39 @@
       display: block;
     }
 
+        /* 1. 세 사람의 토글 버튼 - border, hover 시 파란색 (#6c94b6) */
+    button.toggle-button[data-member="jaephil"],
+    button.toggle-button[data-member="jungkee"],
+    button.toggle-button[data-member="jiwoo"] {
+      border: 1px solid #6c94b6;
+      color: #6c94b6;
+    }
+    
+    button.toggle-button[data-member="jaephil"]:hover,
+    button.toggle-button[data-member="jungkee"]:hover,
+    button.toggle-button[data-member="jiwoo"]:hover {
+      background-color: #6c94b6;
+      color: #FFFECB;
+    }
+    
+    /* 2. 해당 멤버들의 content-box - border 색상 */
+    #jaephil,
+    #jungkee,
+    #jiwoo {
+      border: 1px solid #6c94b6;
+    }
+    
+
+
+
+
+    
     .work-label {
       transition: color 0.3s ease;
     }
 
     .work-together:hover .work-label {
       color: #509140 !important;
-    }
-
-
-    #jaephil, #jungkee, #jiwoo {
-      border: 1px solid #6c94b6;
-      color: #6c94b6;
-    }
-  
-    #jaephil a, #jungkee a, #jiwoo a {
-      color: #6c94b6;
-      text-decoration: none;
-      font-weight: 700;
-    }
-  
-    #jaephil a:hover,
-    #jungkee a:hover,
-    #jiwoo a:hover {
-      color: #509140;
     }
     
     @media (max-width: 600px) {
@@ -334,9 +343,9 @@
         <div class="toggles">
           <button class="toggle-button" onclick="showContent('san')">산</button>
           <button class="toggle-button" onclick="showContent('seonghee')">성희</button>
-          <button class="toggle-button" onclick="showContent('jaephil')">재필</button>
-          <button class="toggle-button" onclick="showContent('jungkee')">정기</button>
-          <button class="toggle-button" onclick="showContent('jiwoo')">지우</button>
+          <button class="toggle-button" onclick="showContent('jaephil')" data-member="jaephil">재필</button>
+          <button class="toggle-button" onclick="showContent('jungkee')" data-member="jungkee">정기</button>
+          <button class="toggle-button" onclick="showContent('jiwoo')" data-member="jiwoo">지우</button>
         </div>
       
         <div id="san" class="content-box" style="display: none;">
@@ -374,8 +383,8 @@
      
         <div id="jaephil" class="content-box" style="display: none;">
           <p style="margin-bottom: 0.3rem;">
-            <span style="font-family: 'HakgyoansimBareondotumB'; color: #509140;">고재필</span>
-            <span style="font-family: 'HakgyoansimBareondotumR'; color: #509140;"> | 미디어필링 대표</span>
+            <span style="font-family: 'HakgyoansimBareondotumB'; color: #6c94b6;">고재필</span>
+            <span style="font-family: 'HakgyoansimBareondotumR'; color: #6c94b6;"> | 미디어필링 대표</span>
           </p>
           <ul style="padding-left: 1.5rem; margin-top: 0rem; line-height: 1.8;">
             <li>서울시립대학교 도시문화기획학 석사</li>
@@ -391,8 +400,8 @@
         
         <div id="jungkee" class="content-box" style="display: none;">
           <p style="margin-bottom: 0.3rem;">
-            <span style="font-family: 'HakgyoansimBareondotumB'; color: #509140;">홍정기</span>
-            <span style="font-family: 'HakgyoansimBareondotumR'; color: #509140;"> | 영상 프로듀서, 음악감독</span>
+            <span style="font-family: 'HakgyoansimBareondotumB'; color: #6c94b6;">홍정기</span>
+            <span style="font-family: 'HakgyoansimBareondotumR'; color: #6c94b6;"> | 영상 프로듀서, 음악감독</span>
           </p>
           <ul style="padding-left: 1.5rem; margin-top: 0rem; line-height: 1.8;">
             <li>음악/영상 창작집단 ‘때와곳’ 작곡가, 프로듀서</li>
@@ -405,8 +414,8 @@
 
         <div id="jiwoo" class="content-box" style="display: none;">
           <p style="margin-bottom: 0.3rem;">
-            <span style="font-family: 'HakgyoansimBareondotumB'; color: #509140;">김지우</span>
-            <span style="font-family: 'HakgyoansimBareondotumR'; color: #509140;"> | 콘텐츠 크리에이터, 작가</span>
+            <span style="font-family: 'HakgyoansimBareondotumB'; color: #6c94b6;">김지우</span>
+            <span style="font-family: 'HakgyoansimBareondotumR'; color: #6c94b6;"> | 콘텐츠 크리에이터, 작가</span>
           </p>
           <ul style="padding-left: 1.5rem; margin-top: 0rem; line-height: 1.8;">
             <li>소셜 미디어 &lt;굴러라 구르님&gt; 채널 운영</li>
